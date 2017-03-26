@@ -1,0 +1,17 @@
+{
+  "name": "chameleon-ui",
+  "theme": "ui",
+  "version": "0.0.0",
+  "author": "rvantonisse",
+  "description": "Adaptable ui theme: CHAMELEON-UI.",
+  "keywords": [
+    "ui",
+    "theme",
+    "adaptable"
+  ],
+  "repository": "https://github.com/rvantonisse/atom-theme-chameleon-ui",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

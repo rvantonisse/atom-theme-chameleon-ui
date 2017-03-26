@@ -1,0 +1,28 @@
+.control-group {
+
+  .controls {
+
+    .checkbox {
+
+      label {
+        position: relative;
+
+        .input-checkbox {
+          position: absolute;
+          top: 0;
+          right: 100%;
+          margin-top: @ui-whitespace-less;
+          margin-right: @ui-whitespace-less;
+        }
+      }
+    }
+  }
+
+  .form-control {
+    padding: @component-padding;
+    height: @font-size * 2;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: all @ui-transition-duration ease;
+  }
+}

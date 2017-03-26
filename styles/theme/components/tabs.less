@@ -1,0 +1,141 @@
+@tab-font-size: @font-size;
+
+.tab-bar {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid @base-border-color;
+  background-color: @tab-bar-background-color;
+
+  .tab {
+    display: flex;
+    flex: 1 2 10em;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: @ui-whitespace;
+    max-height: @tab-height;
+    color: @text-color-subtle;
+    font-size: @tab-font-size;
+    background-color: @tab-background-color;
+    transition: all @ui-transition-duration ease;
+
+    &:hover {
+      color: @text-color;
+
+      .close-icon {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      flex: 2 1 auto;
+      bottom: -1px;
+      width: 20em;
+      max-width: 20em;
+      color: @text-color;
+      background-color: @tab-background-color-active;
+      box-shadow: 0 -1px 2px 0 @base-border-color;
+
+      &:first-child {
+        border-left: 1px solid @base-border-color;
+      }
+
+      &:last-child {
+        border-right: 1px solid @base-border-color;
+      }
+
+      .close-icon {
+        opacity: 1;
+      }
+
+      .foo {
+        content: "bar";
+      }
+    }
+
+    .foo {
+      content: "bar";
+    }
+
+    &.modified {
+      color: @text-color-info;
+
+      &:hover {
+
+        .close-icon {
+          color: @text-color-info;
+        }
+      }
+
+      &:not(:hover) {
+
+        .close-icon {
+          top: auto;
+          right: auto;
+          border: 1px solid currentColor;
+          border-radius: @ui-border-radius;
+          width: auto;
+          height: auto;
+          color: inherit;
+        }
+      }
+
+      &.active {
+
+        .close-icon {
+
+          &::before {
+            display: inline;
+            position: relative;
+            content: "\f081";
+            font-size: 1em;
+            font-family: "Octicons Regular";
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .title {
+      display: inline;
+      flex: 3 1 auto;
+      color: inherit;
+    }
+
+    .close-icon {
+      opacity: 0;
+      flex: 0 0 auto;
+      position: relative;
+      top: auto;
+      right: auto;
+      border: 1px solid currentColor;
+      border-radius: @ui-border-radius;
+      padding: @ui-whitespace-min @ui-whitespace-less;
+      width: @font-size * 2 !important;
+      height: @font-size * 2 !important;
+      color: inherit;
+      text-align: center;
+      vertical-align: middle;
+      transition: border-radius @ui-transition-duration ease;
+      cursor: pointer;
+
+      &:hover {
+        border-radius: @font-size;
+      }
+
+      &::before {
+        display: inline;
+        position: relative;
+        content: "\f081";
+        font-size: @font-size;
+        font-family: "Octicons Regular";
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+      }
+    }
+  }
+}
