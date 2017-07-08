@@ -1,10 +1,10 @@
 @tab-font-size: @font-size;
 
 .tab-bar {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: flex-start;
+  position: relative;
+  z-index: 1;
   background-color: @tab-bar-background-color;
 
   .tab {
@@ -17,9 +17,9 @@
     padding: @ui-whitespace;
     max-height: @tab-height;
     color: @text-color-subtle;
+    transition: all @ui-transition-duration ease;
     font-size: @tab-font-size;
     background-color: @tab-background-color;
-    transition: all @ui-transition-duration ease;
 
     &:hover {
       color: @text-color;
@@ -104,9 +104,9 @@
       width: @font-size * 2 !important;
       height: @font-size * 2 !important;
       color: inherit;
+      transition: border-radius @ui-transition-duration ease;
       text-align: center;
       vertical-align: middle;
-      transition: border-radius @ui-transition-duration ease;
       cursor: pointer;
 
       &:hover {
@@ -123,6 +123,20 @@
         font-style: normal;
         text-decoration: none;
       }
+    }
+  }
+}
+
+atom-panel-container.left {
+
+  .tab-bar {
+    border-bottom: none;
+    background-color: @tab-background-color-active;
+
+    .tab:only-child {
+      bottom: 0;
+      border-right: 0;
+      border-left: 0;
     }
   }
 }
