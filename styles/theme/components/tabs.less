@@ -1,9 +1,10 @@
 @tab-font-size: @font-size;
 
 .tab-bar {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: flex-start;
-  border-bottom: 1px solid @base-border-color;
   background-color: @tab-bar-background-color;
 
   .tab {
@@ -31,31 +32,17 @@
     &.active {
       flex: 2 1 auto;
       bottom: -1px;
+      border-top: 1px solid @base-border-color;
+      border-right: 1px solid @base-border-color;
+      border-left: 1px solid @base-border-color;
       width: 20em;
       max-width: 20em;
       color: @text-color;
       background-color: @tab-background-color-active;
-      box-shadow: 0 -1px 2px 0 @base-border-color;
-
-      &:first-child {
-        border-left: 1px solid @base-border-color;
-      }
-
-      &:last-child {
-        border-right: 1px solid @base-border-color;
-      }
 
       .close-icon {
         opacity: 1;
       }
-
-      .foo {
-        content: "bar";
-      }
-    }
-
-    .foo {
-      content: "bar";
     }
 
     &.modified {
