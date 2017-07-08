@@ -1,28 +1,45 @@
-@padding: @ui-whitespace-less;
+@spacing: @ui-whitespace-less;
 
-atom-workspace-axis {
+atom-workspace {
+  background-color: @app-background-color;
 
-  &.horizontal {
-    padding: @padding;
-  }
+  & > atom-workspace-axis.horizontal {
+    padding-bottom: @spacing;
 
-  &.vertical {
+    & > atom-workspace-axis.vertical {
 
-    .item-views {
-      border-right: 1px solid @base-border-color;
-      border-bottom: 1px solid @base-border-color;
-      border-left: 1px solid @base-border-color;
+      .item-views {
+        border: 1px solid @base-border-color;
+      }
+    }
+
+    & > atom-panel-container.left,
+    & > atom-panel-container.right {
+
+      atom-pane {
+        border: 1px solid @base-border-color;
+      }
     }
   }
-}
 
-atom-panel {
-
-  &.footer {
+  & > atom-panel-container.footer {
     border-top: 1px solid @base-border-color;
   }
 }
 
-atom-text-editor-minimap {
-  background-color: fade(@ui-selection-color, 5%);
+atom-dock {
+
+  .atom-dock-resize-handle {
+    background-color: @app-background-color;
+
+    &.left,
+    &.right {
+      width: @spacing !important;
+    }
+
+    &.top,
+    &.bottom {
+      height: @spacing !important;
+    }
+  }
 }
