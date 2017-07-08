@@ -5,109 +5,63 @@
 // Used to explore and open files in the current project.
 // Overrides: atom/tree-view
 
+.tree-view {
+  color: @text-color;
 
-.tree-view-resizer {
-  display: flex;
-  flex-direction: row;
-  min-width: 20em;
-  max-width: 60em;
-  background-color: @tree-view-background-color;
+  &.list-tree,
+  .list-tree {
 
-  &[data-show-on-right-side="false"] {
+    .selected {
 
-    .tree-view-resize-handle {
-      right: auto;
-    }
-  }
-
-  .tree-view-scroller {
-    border-top: 1px solid @base-border-color;
-    border-bottom: 1px solid @base-border-color;
-    border-left: 1px solid @base-border-color;
-    padding-top: @tab-height;
-
-    &::before {
-      display: block;
-      position: absolute;
-      z-index: 1;
-      top: 1px;
-      padding: @ui-whitespace;
-      padding-left: @component-icon-size + 2 * @component-icon-padding;
-      width: 100%;
-      height: @tab-height;
-      content: "Project files";
-      font-weight: bold;
-      line-height: 1.5em;
-      background: linear-gradient(@base-background-color 70%, transparent);
-    }
-
-    .tree-view {
-      color: @text-color;
-
-      &.list-tree,
-      .list-tree {
-
-        .selected {
-
-          &::before {
-            display: block;
-            box-sizing: border-box;
-            height: 1.5em + 2 * @ui-whitespace-min !important;
-            line-height: 1.5em;
-          }
-
-          &.list-item {
-
-            &::before {
-              margin-top: -@ui-whitespace-min;
-            }
-          }
-        }
-      }
-
-      .list-item {
-        padding: @ui-whitespace-min 0;
-        min-height: 2em;
-        max-height: 2em;
-        color: @text-color;
+      &::before {
+        display: block;
+        box-sizing: border-box;
+        height: 1.5em + 2 * @ui-whitespace-min !important;
         line-height: 1.5em;
-
-        &:hover {
-          background-color: @ui-selection-color;
-        }
       }
 
-      .status-added {
+      &.list-item {
 
-        & > .header,
-        &.list-item {
-          color: @ui-color-green;
-        }
-      }
-
-      .status-ignored {
-
-        & > .header,
-        &.list-item {
-          color: fade(@text-color-subtle, 25%);
-        }
-      }
-
-      .status-modified {
-
-        & > .header,
-        &.list-item {
-          color: @ui-color-orange;
+        &::before {
+          margin-top: -@ui-whitespace-min;
         }
       }
     }
   }
 
-  .tree-view-resize-handle {
-    flex: 0 0 auto;
-    position: relative;
-    border-left: 1px solid @base-border-color;
-    width: @ui-whitespace-min;
-    background-color: @app-background-color;
+  .list-item {
+    padding: @ui-whitespace-min 0;
+    min-height: 2em;
+    max-height: 2em;
+    color: @text-color;
+    line-height: 1.5em;
+
+    &:hover {
+      background-color: @ui-selection-color;
+    }
+  }
+
+  .status-added {
+
+    & > .header,
+    &.list-item {
+      color: @ui-color-green;
+    }
+  }
+
+  .status-ignored {
+
+    & > .header,
+    &.list-item {
+      color: fade(@text-color-subtle, 25%);
+    }
+  }
+
+  .status-modified {
+
+    & > .header,
+    &.list-item {
+      color: @ui-color-orange;
+    }
   }
 }
