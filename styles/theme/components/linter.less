@@ -45,6 +45,7 @@ linter-decoration {
   &.linter-info {
 
     &.linter-gutter {
+      font-size: 16px;
       color: @text-color-info !important;
     }
 
@@ -55,9 +56,10 @@ linter-decoration {
 }
 
 /* Linter tooltips (hovering highlighted syntax) */
-#linter-tooltip {/* stylelint-disable-line */
+#linter-tooltip {
   margin: 0;
   border: 1px solid @app-background-color;
+  width: 100%;
   max-width: 60em;
   font-size: 0.75em;
   background-color: @app-background-color;
@@ -66,28 +68,47 @@ linter-decoration {
   linter-messages {
 
     linter-message {
+      display: flex;
       overflow: visible;
       clear: both;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
       position: relative;
-      padding: @ui-whitespace-less;
+      border-left: none !important;
+      padding: @ui-whitespace;
 
       &:last-child {
 
         &::before {
+          position: relative;
+          top: auto;
+          left: auto;
           border: none;
           content: none;
         }
       }
 
-      &::after {
-        display: inline-block;
-        position: absolute;
-        top: @component-padding * 0.5;
-        left: @component-padding * 0.5;
+      &::before {
+        display: block;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
         font-family: "Octicons Regular";
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: lighter;
-        line-height: 0.75em;
+        line-height: 1em;
+      }
+
+      linter-excerpt {
+        flex-shrink: 1;
+        margin-left: 1em;
+        width: auto;
+      }
+
+      a {
+        margin-left: 1em;
+        color: inherit !important;
       }
 
       & + linter-message {
@@ -98,7 +119,7 @@ linter-decoration {
         color: @text-color-error;
         background-color: fade(@background-color-error, 20%);
 
-        &::after {
+        &::before {
           content: "\f08f";
         }
       }
@@ -107,8 +128,8 @@ linter-decoration {
         color: @text-color-warning;
         background-color: fade(@background-color-warning, 20%);
 
-        &::after {
-          content: "\f02c";
+        &::before {
+          content: "\f02d";
         }
       }
 
@@ -116,22 +137,9 @@ linter-decoration {
         color: @text-color-info;
         background-color: fade(@background-color-info, 20%);
 
-        &::after {
+        &::before {
           content: "\f059";
         }
-      }
-
-      & > span {
-        display: block;
-        padding-left: @component-padding * 5;
-
-        & > a {
-          color: inherit !important;
-        }
-      }
-
-      & > a {
-        display: none;
       }
     }
   }
