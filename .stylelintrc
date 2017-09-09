@@ -23,7 +23,10 @@
         {
           "properties": [
             "flex",
+            "flex-basis",
             "flex-direction",
+            "flex-grow",
+            "flex-shrink",
             "flex-wrap",
             "align-items",
             "justify-content",
@@ -144,18 +147,18 @@
     "selector-list-comma-newline-after": "always",
     "selector-list-comma-newline-before": "never-multi-line",
     "selector-list-comma-space-before": "never",
-    "selector-no-id": [
-      true,
+    "selector-max-id": [
+      0,
       {
         "severity": "warning",
-        "message": "Unexpected id-selector, use class- or tag-selectors instead. (selector-no-id)",
+        "message": "Unexpected id-selector, use class- or tag-selectors instead. (selector-max-id)",
       },
     ],
-    "selector-no-universal": [
-      true,
+    "selector-max-universal": [
+      0,
       {
         "severity": "warning",
-        "message": "Performance: Prevent universal-selector usage. (selector-no-universal)",
+        "message": "Performance: Prevent universal-selector usage. (selector-max-universal)",
       },
     ],
     "string-quotes": "double",
