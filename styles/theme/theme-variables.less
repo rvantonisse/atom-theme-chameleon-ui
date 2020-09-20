@@ -6,29 +6,29 @@
 @import "syntax-variables";
 
 // UI Colors
-@ui-foreground-color: #ccc;
+@ui-foreground-color: #111;
 @ui-foreground-color: @syntax-text-color;
 
-@ui-background-color: #333;
+@ui-background-color: #eee;
 @ui-background-color: @syntax-background-color;
 
-@ui-selection-color: fade(@ui-background-color, 20%);
+@ui-selection-color: fade(contrast(@ui-background-color), 5%);
 @ui-selection-color: @syntax-selection-color;
 
-@ui-shadow-color: fade(#000, 80%);
+@ui-shadow-color: fade(@ui-foreground-color, 20%);
 
 // Reserved colors
 @ui-color-blue: blue;
-@ui-color-blue: @syntax-color-renamed;
+@ui-color-blue: @syntax-color-info;
 
 @ui-color-green: green;
-@ui-color-green: @syntax-color-added;
+@ui-color-green: @syntax-color-success;
 
 @ui-color-orange: orange;
-@ui-color-orange: @syntax-color-modified;
+@ui-color-orange: @syntax-color-warning;
 
 @ui-color-red: red;
-@ui-color-red: @syntax-color-removed;
+@ui-color-red: @syntax-color-error;
 
 // UI Sizes
 @ui-whitespace-more: 1.5em;
