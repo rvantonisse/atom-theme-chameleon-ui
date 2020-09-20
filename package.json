@@ -7,7 +7,9 @@
   "keywords": [
     "ui",
     "theme",
-    "adaptable"
+    "adaptable",
+    "accessible",
+    "accessibility"
   ],
   "repository": "https://github.com/rvantonisse/atom-theme-chameleon-ui",
   "license": "MIT",
