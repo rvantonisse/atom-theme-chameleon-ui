@@ -31,15 +31,15 @@
         }
 
         .status-indicator {
-          border-color: @text-color-success !important;
           padding: @component-padding @ui-whitespace-min;
+          border-color: @text-color-success !important;
           background-color: @text-color-success;
 
           &::after {
             display: inline-block;
-            content: " ";
             width: 100%;
             height: 100%;
+            content: " ";
           }
 
           &.is-disabled {

@@ -5,10 +5,10 @@
 
   li {
     display: block;
+    padding: @ui-whitespace-less;
     border-style: solid;
     border-width: 1px;
     border-color: transparent;
-    padding: @ui-whitespace-less;
     font-size: @font-size;
     line-height: 1.5em;
 
@@ -31,8 +31,8 @@
     }
 
     &.selected {
-      border-color: @text-color;
       border-radius: @component-border-radius;
+      border-color: @text-color;
       background-color: @background-color-selected;
 
       &::before {

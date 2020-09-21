@@ -17,8 +17,8 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "devDependencies": {
-    "stylelint": "^8.1.1",
-    "stylelint-config-standard": "^17.0.0",
-    "stylelint-order": "^0.5.0"
+    "stylelint": "^13.7.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
   }
 }

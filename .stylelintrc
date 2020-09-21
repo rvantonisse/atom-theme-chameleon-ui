@@ -162,7 +162,7 @@
       },
     ],
     "string-quotes": "double",
-    "unit-blacklist": [
+    "unit-disallowed-list": [
       "px",
       {
         "ignoreProperties": {
